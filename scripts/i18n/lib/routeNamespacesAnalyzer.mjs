@@ -42,6 +42,7 @@ const SRC_ROOT = join(REPO_ROOT, "src");
 const APP_ROOT = join(SRC_ROOT, "app");
 const DASHBOARD_ROOT = join(APP_ROOT, "(dashboard)");
 const SECTIONS_ROOT = join(DASHBOARD_ROOT, "dashboard");
+const HOME_ROUTE_ROOT = join(DASHBOARD_ROOT, "home");
 
 const SKIP_DIRS = new Set(["node_modules", ".next", ".claude", ".git", "_tasks", "__pycache__"]);
 
@@ -228,10 +229,13 @@ export function analyzeRouteNamespaces() {
   // Dashboard chrome: everything reachable from the (dashboard) root layout.
   const chrome = closureNamespaces([join(DASHBOARD_ROOT, "layout.tsx")]);
 
-  // Dashboard home: files directly under dashboard/ (page + companions).
-  const homeFiles = readdirSync(SECTIONS_ROOT)
-    .filter((name) => /\.(tsx|ts)$/.test(name))
-    .map((name) => join(SECTIONS_ROOT, name));
+  // Dashboard home: `/home` route files plus companions directly under dashboard/.
+  const homeFiles = [
+    ...walkFiles(HOME_ROUTE_ROOT),
+    ...readdirSync(SECTIONS_ROOT)
+      .filter((name) => /\.(tsx|ts)$/.test(name))
+      .map((name) => join(SECTIONS_ROOT, name)),
+  ];
   const home = new Set([...chrome]);
   for (const ns of closureNamespaces(homeFiles)) home.add(ns);
 

@@ -4390,6 +4390,9 @@
     "obsidianPassword": "ពាក្យសម្ងាត់",
     "obsidianTailscaleHint": "ប្រើ IP របស់ Tailscale ជំនួស localhost ប្រសិនបើកំពុងភ្ជាប់ពីទូរសព្ទ។ ឧបករណ៍ទាំងពីរត្រូវតែស្ថិតនៅលើបណ្ដាញ Tailscale ដូចគ្នា។",
     "cloudSyncNotConfigured": "ការធ្វើសមកាលកម្មលើក្លោដមិនត្រូវបានកំណត់រចនាសម្ព័ន្ធនៅលើអ៊ីនស្តង់នេះទេ។",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "ភ្ជាប់",
     "notionConnectFailed": "បានបរាជ័យក្នុងការភ្ជាប់",
     "notionConnected": "បានភ្ជាប់",
@@ -6470,6 +6473,7 @@
       "monsterapi": "ទទួលបាន API key នៅ monsterapi.ai",
       "moonshot": "ភ្ជាប់ Kimi ដោយប្រើ API key។",
       "morph": "កម្រិតឥតគិតថ្លៃ៖ 250K credits/ខែ, $0",
+      "apmix": "ភ្ជាប់ Apmix ជាមួយកូនសោ API ពី apmix.ai/dashboard — ជាវជាប់តែមួយ ម៉ូដែលច្រើន។",
       "nanogpt": "ភ្ជាប់ NanoGPT ដោយប្រើ API key។",
       "nebius": "ឥណទានសាកល្បងប្រហែល $1 នៅពេលចុះឈ្មោះ សម្រាប់ការធ្វើតេស្ត API",
       "nlpcloud": "NLP Cloud ប្រើ chatbot API ដែលជាកម្មសិទ្ធិផ្ទាល់ខ្លួន ជំនួសឱ្យ OpenAI chat/completions។ OmniRoute សម្របសារ OpenAI ទៅជា input/context/history និងផ្តល់កាតាឡុកក្នុងមូលដ្ឋាននៃម៉ូដែល chatbot ដែលគាំទ្រ។",
@@ -6566,8 +6570,7 @@
       "kiro": "កម្រិតឥតគិតថ្លៃ៖ 50 ក្រេឌីត/ខែ (~25K–100K tokens)។ ⚠️ លក្ខខណ្ឌប្រើប្រាស់ Kiro ហាមឃាត់ការប្រើប្រាស់ proxy/harness របស់ភាគីទីបី។",
       "codex": "ភ្ជាប់ OpenAI Codex ដោយប្រើលំហូរ OAuth ដែលមានស្រាប់។",
       "qwen": "ភ្ជាប់ Qwen Code ដោយប្រើលំហូរ OAuth ដែលមានស្រាប់។",
-      "github-models": "បង្កើត GitHub PAT ដែលមាន scope 'models: read' នៅ github.com/settings/tokens",
-      "apmix": "ភ្ជាប់ Apmix ជាមួយកូនសោ API ពី apmix.ai/dashboard — ជាវជាប់តែមួយ ម៉ូដែលច្រើន។"
+      "github-models": "បង្កើត GitHub PAT ដែលមាន scope 'models: read' នៅ github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} ទទួលយក ID ម៉ូដែលដើមរបស់ provider។ នាំចូលពី /models ឬបន្ថែម ID ផ្ទាល់ខ្លួនសម្រាប់ការកំណត់ផ្លូវ។",
     "bedrockModelsDescription": "ម៉ូដែល Amazon Bedrock ត្រូវបានកំណត់តាមតំបន់ AWS។ នាំចូលពី /models ឬបន្ថែម ID ម៉ូដែល Bedrock ដែលបានបើកប្រើក្នុងតំបន់ដែលបានជ្រើសរើស។",

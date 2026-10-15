@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Contraseña",
     "obsidianTailscaleHint": "Usa tu IP de Tailscale en lugar de localhost si te conectas desde un dispositivo móvil. Ambos dispositivos deben estar en la misma red de Tailscale.",
     "cloudSyncNotConfigured": "La sincronización en la nube no está configurada en esta instancia.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Conectar",
     "notionConnectFailed": "Error al conectar",
     "notionConnected": "Conectado",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "Cuando esta cuenta alcanza su límite de uso de 5 horas y Anthropic ofrece el carril de prioridad baja, OmniRoute lo acepta y sigue enviando solicitudes con anthropic-usage-limit: slow hasta que se restablezca la ventana, en lugar de enfriar la conexión. El límite semanal sigue aplicándose y las respuestas pueden esperar a que haya capacidad disponible.",
     "claudeAutoLimitResetLabel": "Restablecer automáticamente el límite de sesión (una vez por semana)",
     "claudeAutoLimitResetDescription": "Cuando esta cuenta alcanza su límite de uso de 5 horas y hay disponible un restablecimiento del límite de sesión, OmniRoute lo reclama automáticamente y reintenta a máxima velocidad. Consume el restablecimiento único semanal de la cuenta y sigue contando para el límite semanal.",
+    "codexPaidCreditsShort": "Créditos extra",
+    "codexPaidCreditsToggleTitle": "Permitir créditos de pago de Codex cuando se agote la cuota de la suscripción (pueden aplicarse cargos adicionales)",
+    "codexPaidCreditsEnabled": "Créditos de pago de Codex activados (pueden aplicarse cargos adicionales)",
+    "codexPaidCreditsDisabled": "Créditos de pago de Codex desactivados",
+    "failedUpdateCodexPaidCredits": "No se pudo actualizar la política de créditos de pago de Codex",
+    "allowCodexPaidCreditsLabel": "Permitir créditos de pago de Codex",
+    "allowCodexPaidCreditsDescription": "Permite que esta cuenta use créditos de pago cuando su cuota de suscripción alcance el umbral. Requiere créditos disponibles informados por OpenAI; puede generar cargos. Los límites de Spark y los enfriamientos del proveedor siguen aplicándose. La disponibilidad de créditos se comprueba aunque la verificación previa de cuota esté desactivada, salvo que el filtrado local de cuota esté totalmente desactivado (verificación previa de cuota y política de límites, ambas desactivadas).",
     "disableCoolingDescription": "Omite el tiempo de espera transitorio para que esta conexión siga siendo apta incluso después de errores recuperables (los estados terminales, como bloqueado o caducado, siguen siendo aplicables).",
     "disableCoolingLabel": "Desactivar el tiempo de espera para esta conexión",
     "bulkPasteAdded": "{count, plural, one {1 clave añadida} other {# claves añadidas}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "Obtén una clave de API en monsterapi.ai",
       "moonshot": "Conecta Kimi con una clave de API.",
       "morph": "Nivel gratuito: 250K créditos/mes, $0",
+      "apmix": "Conecta Apmix con una clave API de apmix.ai/dashboard — una suscripción, muchos modelos.",
       "nanogpt": "Conecta NanoGPT con una clave de API.",
       "nebius": "~$1 en créditos de prueba al registrarte para probar la API",
       "nlpcloud": "NLP Cloud utiliza una API de chatbot propia en lugar de chat/completions de OpenAI. OmniRoute adapta los mensajes de OpenAI a input/context/history y ofrece un catálogo local de modelos de chatbot compatibles.",
@@ -6559,8 +6570,7 @@
       "kiro": "Nivel gratuito: 50 créditos al mes (~25K–100K tokens). ⚠️ Los términos de servicio de Kiro prohíben el uso de proxies o herramientas de terceros.",
       "codex": "Conecta OpenAI Codex con el flujo de OAuth existente.",
       "qwen": "Conecta Qwen Code con el flujo de OAuth existente.",
-      "github-models": "Crea un PAT de GitHub con el permiso 'models: read' en github.com/settings/tokens",
-      "apmix": "Conecta Apmix con una clave API de apmix.ai/dashboard — una suscripción, muchos modelos."
+      "github-models": "Crea un PAT de GitHub con el permiso 'models: read' en github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} acepta ID de modelo nativo del proveedor. Importe desde /models o agregue ID personalizados para enrutamiento.",
     "bedrockModelsDescription": "Los modelos de Amazon Bedrock tienen como alcance la región de AWS. Importe desde /models o agregue ID de modelo Bedrock habilitados en la región seleccionada.",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Límites de concurrencia por modelo",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Opcional: un modelo=límite por línea, comparado con el id exacto del modelo en el proveedor. Las solicitudes excedentes se ponen en cola localmente; en blanco significa sin límite por modelo.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Entrada de concurrencia por modelo no válida \"{entry}\": usa modelo=límite con un número entero de 1 a {max}.",
-    "codexPaidCreditsShort": "Créditos extra",
-    "codexPaidCreditsToggleTitle": "Permitir créditos de pago de Codex cuando se agote la cuota de la suscripción (pueden aplicarse cargos adicionales)",
-    "codexPaidCreditsEnabled": "Créditos de pago de Codex activados (pueden aplicarse cargos adicionales)",
-    "codexPaidCreditsDisabled": "Créditos de pago de Codex desactivados",
-    "failedUpdateCodexPaidCredits": "No se pudo actualizar la política de créditos de pago de Codex",
-    "allowCodexPaidCreditsLabel": "Permitir créditos de pago de Codex",
-    "allowCodexPaidCreditsDescription": "Permite que esta cuenta use créditos de pago cuando su cuota de suscripción alcance el umbral. Requiere créditos disponibles informados por OpenAI; puede generar cargos. Los límites de Spark y los enfriamientos del proveedor siguen aplicándose. La disponibilidad de créditos se comprueba aunque la verificación previa de cuota esté desactivada, salvo que el filtrado local de cuota esté totalmente desactivado (verificación previa de cuota y política de límites, ambas desactivadas)."
+    "rateLimitOverridesModelConcurrencyInvalid": "Entrada de concurrencia por modelo no válida \"{entry}\": usa modelo=límite con un número entero de 1 a {max}."
   },
   "settings": {
     "title": "Configuración",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "No se pudo transformar el flujo"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "Uso",
     "grokExtraUsageCredits": "Créditos Adicionales de Uso",
     "grokAutoTopUp": "Recarga Automática",
@@ -10122,11 +10129,7 @@
     "updatedShort": "Actualizado",
     "lastRefreshed": "Última actualización",
     "providerQuota": "Cuota del proveedor",
-    "providerQuotaHomeHint": "Estado en tiempo real de las cuentas conectadas",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "Estado en tiempo real de las cuentas conectadas"
   },
   "modals": {
     "waitingAuth": "Esperando autorización",

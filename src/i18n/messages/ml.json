@@ -4390,6 +4390,9 @@
     "obsidianPassword": "പാസ്വേഡ്",
     "obsidianTailscaleHint": "മൊബൈലിൽ നിന്ന് കണക്റ്റ് ചെയ്യുകയാണെങ്കിൽ localhost-ന് പകരം നിങ്ങളുടെ Tailscale IP ഉപയോഗിക്കുക. രണ്ട് ഉപകരണങ്ങളും ഒരേ Tailscale നെറ്റ്വർക്കിലായിരിക്കണം.",
     "cloudSyncNotConfigured": "ഈ ഇൻസ്റ്റൻസിൽ ക്ലൗഡ് സമന്വയം കോൺഫിഗർ ചെയ്തിട്ടില്ല.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "കണക്റ്റ് ചെയ്യുക",
     "notionConnectFailed": "കണക്റ്റ് ചെയ്യാനായില്ല",
     "notionConnected": "കണക്റ്റ് ചെയ്തു",
@@ -6470,6 +6473,7 @@
       "monsterapi": "monsterapi.ai-ൽ API കീ നേടുക",
       "moonshot": "ഒരു API കീ ഉപയോഗിച്ച് Kimi കണക്റ്റ് ചെയ്യുക.",
       "morph": "സൗജന്യ ടയർ: പ്രതിമാസം 250K ക്രെഡിറ്റുകൾ, $0",
+      "apmix": "apmix.ai/dashboard-ൽ നിന്നുള്ള API കീ ഉപയോഗിച്ച് Apmix ബന്ധിപ്പിക്കുക — ഒരു സബ്സ്ക്രിപ്ഷൻ, ധാരാളം മോഡലുകൾ.",
       "nanogpt": "ഒരു API കീ ഉപയോഗിച്ച് NanoGPT കണക്റ്റ് ചെയ്യുക.",
       "nebius": "API പരിശോധനയ്ക്കായി സൈൻ അപ്പ് ചെയ്യുമ്പോൾ ~$1 ട്രയൽ ക്രെഡിറ്റുകൾ",
       "nlpcloud": "OpenAI chat/completions-ന് പകരം NLP Cloud ഒരു പ്രൊപ്രൈറ്ററി ചാറ്റ്ബോട്ട് API ഉപയോഗിക്കുന്നു. OmniRoute, OpenAI സന്ദേശങ്ങളെ input/context/history-ലേക്ക് പൊരുത്തപ്പെടുത്തുകയും പിന്തുണയ്ക്കുന്ന ചാറ്റ്ബോട്ട് മോഡലുകളുടെ ഒരു ലോക്കൽ കാറ്റലോഗ് ലഭ്യമാക്കുകയും ചെയ്യുന്നു.",
@@ -6566,8 +6570,7 @@
       "kiro": "സൗജന്യ ടിയർ: പ്രതിമാസം 50 ക്രെഡിറ്റുകൾ (~25K–100K tokens). ⚠️ Kiro ToS മൂന്നാം കക്ഷി proxy/harness ഉപയോഗം നിരോധിക്കുന്നു.",
       "codex": "നിലവിലുള്ള OAuth പ്രവാഹം ഉപയോഗിച്ച് OpenAI Codex കണക്റ്റ് ചെയ്യുക.",
       "qwen": "നിലവിലുള്ള OAuth പ്രവാഹം ഉപയോഗിച്ച് Qwen Code കണക്റ്റ് ചെയ്യുക.",
-      "github-models": "github.com/settings/tokens-ൽ 'models: read' സ്കോപ്പുള്ള ഒരു GitHub PAT സൃഷ്ടിക്കുക",
-      "apmix": "apmix.ai/dashboard-ൽ നിന്നുള്ള API കീ ഉപയോഗിച്ച് Apmix ബന്ധിപ്പിക്കുക — ഒരു സബ്സ്ക്രിപ്ഷൻ, ധാരാളം മോഡലുകൾ."
+      "github-models": "github.com/settings/tokens-ൽ 'models: read' സ്കോപ്പുള്ള ഒരു GitHub PAT സൃഷ്ടിക്കുക"
     },
     "passthroughModelsDescription": "{provider} പ്രൊവൈഡർ-നേറ്റീവ് മോഡൽ ID-കൾ സ്വീകരിക്കുന്നു. /models-ൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ റൂട്ടിംഗിനായി ഇഷ്ടാനുസൃത ID-കൾ ചേർക്കുക.",
     "bedrockModelsDescription": "Amazon Bedrock മോഡലുകൾ AWS മേഖല അനുസരിച്ചാണ് പരിധിനിർണ്ണയിച്ചിരിക്കുന്നത്. /models-ൽ നിന്ന് ഇമ്പോർട്ട് ചെയ്യുക അല്ലെങ്കിൽ തിരഞ്ഞെടുത്ത മേഖലയിൽ പ്രവർത്തനക്ഷമമാക്കിയ Bedrock മോഡൽ ID-കൾ ചേർക്കുക.",

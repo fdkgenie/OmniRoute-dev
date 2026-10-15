@@ -4390,6 +4390,9 @@
     "obsidianPassword": "पासवर्ड",
     "obsidianTailscaleHint": "यदि मोबाइल से कनेक्ट कर रहे हैं तो localhost के बजाय अपने Tailscale IP का उपयोग करें। दोनों डिवाइस एक ही Tailscale नेटवर्क पर होने चाहिए।",
     "cloudSyncNotConfigured": "इस उदाहरण पर क्लाउड सिंक कॉन्फ़िगर नहीं किया गया है।",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "जोड़ें",
     "notionConnectFailed": "कनेक्ट करने में विफल",
     "notionConnected": "जुड़ा हुआ",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "जब यह खाता अपनी 5 घंटे की उपयोग सीमा तक पहुँच जाता है और Anthropic कम-प्राथमिकता वाली लेन उपलब्ध कराता है, तो OmniRoute उसे स्वीकार कर लेता है और कनेक्शन को ठंडा करने के बजाय, विंडो रीसेट होने तक anthropic-usage-limit: slow के साथ अनुरोध भेजता रहता है। साप्ताहिक सीमा फिर भी लागू रहती है और प्रतिक्रियाओं को खाली क्षमता उपलब्ध होने तक प्रतीक्षा करनी पड़ सकती है।",
     "claudeAutoLimitResetLabel": "सत्र सीमा को स्वतः रीसेट करें (सप्ताह में एक बार)",
     "claudeAutoLimitResetDescription": "जब यह खाता अपनी 5 घंटे की उपयोग सीमा तक पहुँच जाता है और सत्र-सीमा रीसेट उपलब्ध होता है, तो OmniRoute उसे स्वचालित रूप से प्राप्त करके पूरी गति से फिर से प्रयास करता है। यह खाते के सप्ताह में एक बार मिलने वाले रीसेट का उपयोग करता है और फिर भी साप्ताहिक सीमा में गिना जाता है।",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "अस्थायी कूलडाउन को छोड़ें ताकि पुनर्प्राप्ति योग्य त्रुटियों के बाद भी यह कनेक्शन योग्य बना रहे (प्रतिबंधित/समाप्त जैसी अंतिम स्थितियां अभी भी लागू होती हैं)।",
     "disableCoolingLabel": "इस कनेक्शन के लिए कूलडाउन अक्षम करें",
     "bulkPasteAdded": "{count, plural, one {1 कुंजी जोड़ी गई} other {# कुंजियाँ जोड़ी गईं}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "monsterapi.ai पर API कुंजी प्राप्त करें",
       "moonshot": "Moonshot AI को एक API कुंजी से कनेक्ट करें।",
       "morph": "निःशुल्क टियर: 250K क्रेडिट/माह, $0",
+      "apmix": "apmix.ai/dashboard से API की के साथ Apmix कनेक्ट करें — एक सब्सक्रिप्शन, कई मॉडल।",
       "nanogpt": "NanoGPT को एक API कुंजी से कनेक्ट करें।",
       "nebius": "API परीक्षण के लिए साइनअप पर ~$1 ट्रायल क्रेडिट",
       "nlpcloud": "NLP Cloud, OpenAI chat/completions के बजाय एक मालिकाना चैटबॉट API का उपयोग करता है। OmniRoute OpenAI संदेशों को इनपुट/संदर्भ/इतिहास के अनुकूल बनाता है और समर्थित चैटबॉट मॉडलों का एक स्थानीय कैटलॉग प्रदर्शित करता है।",
@@ -6559,8 +6570,7 @@
       "kiro": "फ्री टियर: 50 क्रेडिट/महीना (~25K–100K टोकन)। ⚠️ Kiro ToS तृतीय-पक्ष प्रॉक्सी/हार्नेस के उपयोग को प्रतिबंधित करता है।",
       "codex": "OpenAI Codex को मौजूदा OAuth फ़्लो से कनेक्ट करें।",
       "qwen": "Qwen Code को मौजूदा OAuth फ़्लो से कनेक्ट करें।",
-      "github-models": "github.com/settings/tokens पर 'models: read' स्कोप के साथ एक GitHub PAT बनाएं",
-      "apmix": "apmix.ai/dashboard से API की के साथ Apmix कनेक्ट करें — एक सब्सक्रिप्शन, कई मॉडल।"
+      "github-models": "github.com/settings/tokens पर 'models: read' स्कोप के साथ एक GitHub PAT बनाएं"
     },
     "passthroughModelsDescription": "{provider} प्रदाता-मूल मॉडल आईडी स्वीकार करता है। /मॉडल से आयात करें या रूटिंग के लिए कस्टम आईडी जोड़ें।",
     "bedrockModelsDescription": "अमेज़ॅन बेडरॉक मॉडल का दायरा AWS क्षेत्र द्वारा तय किया गया है। /मॉडल से आयात करें या चयनित क्षेत्र में सक्षम बेडरॉक मॉडल आईडी जोड़ें।",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "स्ट्रीम को रूपांतरित करने में विफल"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "उपयोग",
     "grokExtraUsageCredits": "अतिरिक्त उपयोग क्रेडिट्स",
     "grokAutoTopUp": "स्वचालित टॉप-अप",
@@ -10122,11 +10129,7 @@
     "updatedShort": "अपडेट किया गया",
     "lastRefreshed": "अंतिम बार रीफ़्रेश किया गया",
     "providerQuota": "प्रदाता कोटा",
-    "providerQuotaHomeHint": "कनेक्टेड खातों में लाइव स्थिति",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "कनेक्टेड खातों में लाइव स्थिति"
   },
   "modals": {
     "waitingAuth": "प्राधिकरण की प्रतीक्षा की जा रही है",

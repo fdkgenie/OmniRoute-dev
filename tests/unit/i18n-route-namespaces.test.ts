@@ -61,6 +61,15 @@ test("every dashboard section has a SectionI18nProvider layout", () => {
   );
 });
 
+test("/home route mounts the home namespace provider", () => {
+  const layoutPath = join(REPO_ROOT, "src", "app", "(dashboard)", "home", "layout.tsx");
+  assert.ok(
+    existsSync(layoutPath),
+    "home/layout.tsx missing — /home would get chrome-only messages"
+  );
+  assert.match(readFileSync(layoutPath, "utf8"), /namespaces=\{sectionNamespaces\.home\}/);
+});
+
 test("every section set includes the chrome namespaces", () => {
   const { chrome, sections, home } = JSON.parse(readFileSync(MAP_PATH, "utf8"));
   const chromeSet = new Set(chrome);

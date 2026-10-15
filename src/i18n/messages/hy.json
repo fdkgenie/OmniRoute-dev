@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Գաղտնաբառ",
     "obsidianTailscaleHint": "Բջջային սարքից միանալիս localhost-ի փոխարեն օգտագործեք ձեր Tailscale IP-ն։ Երկու սարքերն էլ պետք է լինեն նույն Tailscale ցանցում։",
     "cloudSyncNotConfigured": "Այս համակարգում ամպային համաժամացումը կազմաձևված չէ։",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Միացնել",
     "notionConnectFailed": "Չհաջողվեց միանալ",
     "notionConnected": "Միացված է",
@@ -6470,6 +6473,7 @@
       "monsterapi": "Ստացեք API բանալի monsterapi.ai հասցեում",
       "moonshot": "Միացրեք Kimi-ն API բանալիով։",
       "morph": "Անվճար մակարդակ՝ ամսական 250K կրեդիտ, $0",
+      "apmix": "Միացրեք Apmix-ը apmix.ai/dashboard-ից API բանալիով — մեկ բաժանորդագրություն, շատ մոդելներ:",
       "nanogpt": "Միացրեք NanoGPT-ն API բանալիով։",
       "nebius": "Գրանցվելիս՝ մոտ $1-ի փորձնական կրեդիտներ API-ի փորձարկման համար",
       "nlpcloud": "NLP Cloud-ն OpenAI-ի chat/completions-ի փոխարեն օգտագործում է սեփական չաթբոտի API։ OmniRoute-ը OpenAI-ի հաղորդագրությունները հարմարեցնում է input/context/history ձևաչափին և տրամադրում է աջակցվող չաթբոտի մոդելների տեղային կատալոգ։",
@@ -6566,8 +6570,7 @@
       "kiro": "Անվճար մակարդակ՝ ամսական 50 կրեդիտ (~25K–100K թոքեն)։ ⚠️ Kiro-ի ToS-ն արգելում է երրորդ կողմի պրոքսիի/գործիքակազմի օգտագործումը։",
       "codex": "Միացրեք OpenAI Codex-ը առկա OAuth հոսքով։",
       "qwen": "Միացրեք Qwen Code-ը առկա OAuth հոսքով։",
-      "github-models": "Ստեղծեք GitHub PAT՝ 'models: read' տիրույթով, github.com/settings/tokens հասցեում",
-      "apmix": "Միացրեք Apmix-ը apmix.ai/dashboard-ից API բանալիով — մեկ բաժանորդագրություն, շատ մոդելներ:"
+      "github-models": "Ստեղծեք GitHub PAT՝ 'models: read' տիրույթով, github.com/settings/tokens հասցեում"
     },
     "passthroughModelsDescription": "{provider}-ն ընդունում է մատակարարին բնորոշ մոդելների ID-ներ։ Ներմուծեք /models-ից կամ երթուղավորման համար ավելացրեք հատուկ ID-ներ։",
     "bedrockModelsDescription": "Amazon Bedrock մոդելները սահմանափակված են ըստ AWS տարածաշրջանի։ Ներմուծեք /models-ից կամ ավելացրեք ընտրված տարածաշրջանում միացված Bedrock մոդելների ID-ները։",

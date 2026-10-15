@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Пароль",
     "obsidianTailscaleHint": "Використовуйте свою IP-адресу Tailscale замість localhost, якщо підключаєтеся з мобільного пристрою. Обидва пристрої мають бути в одній мережі Tailscale.",
     "cloudSyncNotConfigured": "Хмарна синхронізація не налаштована на цьому екземплярі.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Підключитися",
     "notionConnectFailed": "Не вдалося підключитися",
     "notionConnected": "Підключено",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "Коли цей обліковий запис досягає 5-годинного ліміту використання й Anthropic пропонує канал із нижчим пріоритетом, OmniRoute приймає його та продовжує надсилати запити з anthropic-usage-limit: slow до скидання вікна замість переведення з’єднання в режим очікування. Тижневий ліміт усе одно діє, а відповіді можуть очікувати на вільні ресурси.",
     "claudeAutoLimitResetLabel": "Автоматично скидати ліміт сеансу (раз на тиждень)",
     "claudeAutoLimitResetDescription": "Коли цей обліковий запис досягає 5-годинного ліміту використання й доступне скидання ліміту сеансу, OmniRoute автоматично активує його та повторює спробу на повній швидкості. Використовується доступне для облікового запису скидання раз на тиждень, а використання й надалі враховується в тижневому ліміті.",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "Пропускати тимчасовий період очікування, щоб це підключення залишалося доступним навіть після відновлюваних помилок (термінальні стани, як-от banned/expired, все одно застосовуються).",
     "disableCoolingLabel": "Вимкнути період очікування для цього підключення",
     "bulkPasteAdded": "{count, plural, one {Додано 1 ключ} few {Додано # ключі} many {Додано # ключів} other {Додано # ключа}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "Отримайте API-ключ на monsterapi.ai",
       "moonshot": "Підключіть Moonshot AI за допомогою API-ключа.",
       "morph": "Безкоштовний тариф: 250 тис. кредитів/місяць, $0",
+      "apmix": "Підключіть Apmix із API-ключем від apmix.ai/dashboard — одна підписка, багато моделей.",
       "nanogpt": "Підключіть NanoGPT за допомогою API-ключа.",
       "nebius": "~$1 пробних кредитів при реєстрації для тестування API",
       "nlpcloud": "NLP Cloud використовує власний API чат-бота замість OpenAI chat/completions. OmniRoute адаптує повідомлення OpenAI до вхідних даних/контексту/історії та надає локальний каталог підтримуваних моделей чат-ботів.",
@@ -6559,8 +6570,7 @@
       "kiro": "Безкоштовний рівень: 50 кредитів на місяць (~25K–100K токенів). ⚠️ Умови використання Kiro забороняють використання через сторонні проксі або оболонки.",
       "codex": "Підключіть OpenAI Codex за допомогою наявного процесу OAuth.",
       "qwen": "Підключіть Qwen Code за допомогою наявного процесу OAuth.",
-      "github-models": "Створіть GitHub PAT з областю видимості 'models: read' на github.com/settings/tokens",
-      "apmix": "Підключіть Apmix із API-ключем від apmix.ai/dashboard — одна підписка, багато моделей."
+      "github-models": "Створіть GitHub PAT з областю видимості 'models: read' на github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} приймає власні ідентифікатори моделі постачальника. Імпортуйте з /models або додайте власні ідентифікатори для маршрутизації.",
     "bedrockModelsDescription": "Моделі Amazon Bedrock залежать від регіону AWS. Імпортуйте з /models або додайте ідентифікатори моделі Bedrock, активовані у вибраному регіоні.",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "Налаштування",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "Не вдалося перетворити потік"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "Використання",
     "grokExtraUsageCredits": "Додаткові кредитні кошти",
     "grokAutoTopUp": "Автоматичне поповнення",
@@ -10122,11 +10129,7 @@
     "updatedShort": "Оновлено",
     "lastRefreshed": "Останнє оновлення",
     "providerQuota": "Квота провайдера",
-    "providerQuotaHomeHint": "Стан у реальному часі за підключеними акаунтами",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "Стан у реальному часі за підключеними акаунтами"
   },
   "modals": {
     "waitingAuth": "Очікування авторизації",

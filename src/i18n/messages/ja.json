@@ -4390,6 +4390,9 @@
     "obsidianPassword": "パスワード",
     "obsidianTailscaleHint": "モバイルから接続する場合は、localhostの代わりにTailscale IPを使用してください。両方のデバイスが同じTailscaleネットワーク上にある必要があります。",
     "cloudSyncNotConfigured": "このインスタンスではクラウド同期が設定されていません。",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "接続する",
     "notionConnectFailed": "接続に失敗しました",
     "notionConnected": "接続されました",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "このアカウントが5時間の使用上限に達し、Anthropicから低優先度レーンが提供された場合、OmniRouteはそれを受け入れ、接続をクールダウンする代わりに、ウィンドウがリセットされるまで anthropic-usage-limit: slow を指定してリクエストの送信を続けます。週間上限は引き続き適用され、空き容量が生じるまで応答が待機する場合があります。",
     "claudeAutoLimitResetLabel": "セッション上限を自動リセット（週1回）",
     "claudeAutoLimitResetDescription": "このアカウントが5時間の使用上限に達し、セッション上限のリセットが利用可能な場合、OmniRouteは自動的にそれを適用し、通常速度で再試行します。アカウントの週1回のリセットを使用し、使用量は引き続き週間上限にカウントされます。",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "一時的なクールダウンをスキップし、回復可能なエラーの後でもこの接続を対象として維持します (banned/expired などの終端状態は引き続き適用されます)。",
     "disableCoolingLabel": "この接続のクールダウンを無効化",
     "bulkPasteAdded": "{count, plural, one {1件のキーを追加しました} other {#件のキーを追加しました}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "monsterapi.aiでAPIキーを取得",
       "moonshot": "APIキーを使用してMoonshot AIに接続します。",
       "morph": "無料プラン：250Kクレジット/月、$0",
+      "apmix": "apmix.ai/dashboard のAPIキーでApmixに接続 — 1つのサブスクリプションで多数のモデル。",
       "nanogpt": "APIキーを使用してNanoGPTに接続します。",
       "nebius": "APIテスト用に登録時に約1ドルのトライアルクレジット",
       "nlpcloud": "NLP CloudはOpenAIのchat/completionsの代わりに独自のチャットボットAPIを使用します。OmniRouteはOpenAIメッセージをinput/context/historyに適応させ、サポートされているチャットボットモデルのローカルカタログを公開します。",
@@ -6559,8 +6570,7 @@
       "kiro": "無料枠: 50クレジット/月（約25K〜100Kトークン）。⚠️ Kiroの利用規約（ToS）は、サードパーティのプロキシやハーネスの使用を禁止しています。",
       "codex": "既存のOAuthフローを使用してOpenAI Codexに接続します。",
       "qwen": "既存のOAuthフローを使用してQwen Codeに接続します。",
-      "github-models": "github.com/settings/tokens で 'models: read' スコープを持つGitHub PATを作成",
-      "apmix": "apmix.ai/dashboard のAPIキーでApmixに接続 — 1つのサブスクリプションで多数のモデル。"
+      "github-models": "github.com/settings/tokens で 'models: read' スコープを持つGitHub PATを作成"
     },
     "passthroughModelsDescription": "{provider} は、プロバイダーネイティブのモデル ID を受け入れます。 /models からインポートするか、ルーティング用のカスタム ID を追加します。",
     "bedrockModelsDescription": "Amazon Bedrock モデルは、AWS リージョンによって範囲が定められています。 /models からインポートするか、選択したリージョンで有効になっている Bedrock モデル ID を追加します。",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "設定",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "ストリームの変換に失敗しました"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "使用法",
     "grokExtraUsageCredits": "追加の使用クレジット",
     "grokAutoTopUp": "自動チャージ",
@@ -10122,11 +10129,7 @@
     "updatedShort": "更新済み",
     "lastRefreshed": "最終更新",
     "providerQuota": "プロバイダークォータ",
-    "providerQuotaHomeHint": "接続されたアカウント全体のライブステータス",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "接続されたアカウント全体のライブステータス"
   },
   "modals": {
     "waitingAuth": "承認を待っています",

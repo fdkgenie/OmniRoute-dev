@@ -4390,6 +4390,9 @@
     "obsidianPassword": "პაროლი",
     "obsidianTailscaleHint": "მობილური მოწყობილობიდან დაკავშირებისას localhost-ის ნაცვლად გამოიყენეთ თქვენი Tailscale-ის IP. ორივე მოწყობილობა ერთსა და იმავე Tailscale ქსელში უნდა იყოს.",
     "cloudSyncNotConfigured": "ამ ინსტანციაზე ღრუბლოვანი სინქრონიზაცია კონფიგურირებული არ არის.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "დაკავშირება",
     "notionConnectFailed": "დაკავშირება ვერ მოხერხდა",
     "notionConnected": "დაკავშირებულია",
@@ -6470,6 +6473,7 @@
       "monsterapi": "მიიღეთ API გასაღები მისამართზე monsterapi.ai",
       "moonshot": "დააკავშირეთ Kimi API გასაღებით.",
       "morph": "უფასო დონე: 250K კრედიტი თვეში, $0",
+      "apmix": "დააკავშირეთ Apmix API გასაღებით apmix.ai/dashboard-დან — ერთი გამოწერა, მრავალი მოდელი.",
       "nanogpt": "დააკავშირეთ NanoGPT API გასაღებით.",
       "nebius": "რეგისტრაციისას დაახლოებით $1-ის საცდელი კრედიტი API-ის ტესტირებისთვის",
       "nlpcloud": "NLP Cloud OpenAI-ის chat/completions-ის ნაცვლად ჩატბოტის საკუთარ API-ს იყენებს. OmniRoute OpenAI-ის შეტყობინებებს input/context/history ფორმატზე ადაპტირებს და მხარდაჭერილი ჩატბოტის მოდელების ლოკალურ კატალოგს გვთავაზობს.",
@@ -6566,8 +6570,7 @@
       "kiro": "უფასო ტარიფი: 50 კრედიტი/თვე (~25K–100K ტოკენი). ⚠️ Kiro-ს მომსახურების პირობები კრძალავს მესამე მხარის პროქსის/ჰარნესის გამოყენებას.",
       "codex": "დააკავშირეთ OpenAI Codex არსებული OAuth პროცესით.",
       "qwen": "დააკავშირეთ Qwen Code არსებული OAuth პროცესით.",
-      "github-models": "შექმენით GitHub PAT 'models: read' წვდომის სფეროთი მისამართზე github.com/settings/tokens",
-      "apmix": "დააკავშირეთ Apmix API გასაღებით apmix.ai/dashboard-დან — ერთი გამოწერა, მრავალი მოდელი."
+      "github-models": "შექმენით GitHub PAT 'models: read' წვდომის სფეროთი მისამართზე github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} იღებს პროვაიდერის ნატიურ მოდელის ID-ებს. შემოიტანეთ ისინი /models განყოფილებიდან ან მარშრუტიზაციისთვის დაამატეთ მორგებული ID-ები.",
     "bedrockModelsDescription": "Amazon Bedrock-ის მოდელები შეზღუდულია AWS-ის რეგიონის მიხედვით. შემოიტანეთ ისინი /models განყოფილებიდან ან დაამატეთ არჩეულ რეგიონში ჩართული Bedrock მოდელების ID-ები.",
