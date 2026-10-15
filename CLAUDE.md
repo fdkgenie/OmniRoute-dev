@@ -68,3 +68,17 @@ Before cutting a branch or opening a PR, run the base-green check (`AGENTS.md` �
 "Base-green check"; project skills reference it as `.agents/skills/_shared/base-green.md`). A PR
 opened while the base tip is red must carry `⚠️ base-red inherited: #<issue>` in its body. To
 drain an accumulated red state (base tip + red PRs), use the `/sweep-reds` skill.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues on `fdkgenie/OmniRoute-dev` (origin), via `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five canonical labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: root `GLOSSARY.md` + `docs/adr/`. See `docs/agents/domain.md`.
