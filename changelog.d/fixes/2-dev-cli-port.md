@@ -1,0 +1,1 @@
+- **fix(dev):** `npm run dev -- --port N` (also `-p N` / `--port=N`) now binds the dev server on N, overriding `.env` `PORT`; `run-next.mjs` previously ignored argv. On npm 12 the `--` is required — bare `npm run dev --port N` fails with `EUNKNOWNCONFIG` ([#2](https://github.com/fdkgenie/OmniRoute-dev/pull/2))
