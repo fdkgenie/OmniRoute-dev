@@ -5,7 +5,7 @@ import http from "node:http";
 import path from "node:path";
 import next from "next";
 import { bootstrapEnv } from "../build/bootstrap-env.mjs";
-import { resolveRuntimePorts, withRuntimePortEnv } from "../build/runtime-env.mjs";
+import { parseCliPort, resolveRuntimePorts, withRuntimePortEnv } from "../build/runtime-env.mjs";
 import { createOmnirouteWsBridge } from "./v1-ws-bridge.mjs";
 import { createResponsesWsProxy } from "./responses-ws-proxy.mjs";
 import { createNextUpgradeRelay } from "./next-upgrade-relay.mjs";
@@ -55,6 +55,12 @@ if (dev) {
 }
 
 const bootstrappedEnv = bootstrapEnv();
+// `next dev --port N` parity: CLI port overrides PORT/DASHBOARD_PORT from .env.
+const cliPort = parseCliPort(process.argv);
+if (cliPort) {
+  bootstrappedEnv.PORT = cliPort;
+  bootstrappedEnv.DASHBOARD_PORT = cliPort;
+}
 const runtimePorts = resolveRuntimePorts(bootstrappedEnv);
 const mergedEnv = withRuntimePortEnv(bootstrappedEnv, runtimePorts);
 

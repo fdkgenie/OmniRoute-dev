@@ -165,6 +165,17 @@ export function resolveRuntimePorts(fromEnv = process.env) {
   return { basePort, apiPort, dashboardPort };
 }
 
+/**
+ * `next dev --port N` / `-p N` / `--port=N` parity for scripts/dev/run-next.mjs.
+ * Returns the raw port string, or undefined when no flag is present.
+ * @param {string[]} argv
+ */
+export function parseCliPort(argv = process.argv) {
+  const index = argv.findIndex((arg) => arg === "--port" || arg === "-p");
+  if (index > -1) return argv[index + 1];
+  return argv.find((arg) => arg.startsWith("--port="))?.slice("--port=".length);
+}
+
 export function withRuntimePortEnv(env, runtimePorts) {
   const { basePort, apiPort, dashboardPort } = runtimePorts;
 

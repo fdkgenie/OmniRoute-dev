@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 // We test the standalone (scripts/) version of port resolution since
 // the src/ version uses @/ alias that requires the full Next.js build.
-import { parsePort, resolveRuntimePorts } from "../../scripts/build/runtime-env.mjs";
+import { parseCliPort, parsePort, resolveRuntimePorts } from "../../scripts/build/runtime-env.mjs";
 
 describe("parsePort", () => {
   it("parses a valid port number", () => {
@@ -104,5 +104,17 @@ describe("resolveRuntimePorts", () => {
     process.env.PORT = "abc";
     const ports = resolveRuntimePorts();
     assert.equal(ports.basePort, 20128);
+  });
+});
+
+describe("parseCliPort", () => {
+  it("reads --port N, -p N and --port=N", () => {
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "--port", "20138"]), "20138");
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "-p", "3001"]), "3001");
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "--port=4000"]), "4000");
+  });
+
+  it("returns undefined without a port flag", () => {
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev"]), undefined);
   });
 });
