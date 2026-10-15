@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Ọ̀rọ̀ aṣínà",
     "obsidianTailscaleHint": "Lo IP Tailscale rẹ dípò localhost bí o bá ń sopọ̀ láti ẹ̀rọ alágbèéká. Àwọn ẹ̀rọ méjèèjì gbọ́dọ̀ wà lórí nẹ́tíwọ́ọ̀kì Tailscale kan náà.",
     "cloudSyncNotConfigured": "A kò tíì ṣètò amuṣiṣẹpọ cloud lórí instance yìí.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Sopọ̀",
     "notionConnectFailed": "Kò ṣeé ṣe láti sopọ̀",
     "notionConnected": "Ti sopọ̀",
@@ -6470,6 +6473,7 @@
       "monsterapi": "Gba kọ́kọ́rọ́ API ní monsterapi.ai",
       "moonshot": "So Kimi pọ̀ pẹ̀lú kọ́kọ́rọ́ API kan.",
       "morph": "Ìpele ọ̀fẹ́: kirẹditi 250K/oṣù, $0",
+      "apmix": "So Apmix pọ mọ API key kan láti apmix.ai/dashboard — ìfọwọ́sí kan, ọ̀pọ̀ àwọn módéèlù.",
       "nanogpt": "So NanoGPT pọ̀ mọ́ kọ́kọ́rọ́ API kan.",
       "nebius": "Kirẹditi ìdánwò tó tó ~$1 nígbà ìforúkọsílẹ̀ fún ṣíṣàyẹ̀wò API",
       "nlpcloud": "NLP Cloud ń lo API chatbot aládàáni dípò OpenAI chat/completions. OmniRoute ń ṣàtúnṣe àwọn ìfiránṣẹ́ OpenAI sí input/context/history, ó sì ń pèsè àkójọ abẹ́lé ti àwọn àwòṣe chatbot tí a ṣètìlẹ́yìn fún.",
@@ -6566,8 +6570,7 @@
       "kiro": "Ìpele ọ̀fẹ́: kírẹ́díìtì 50/oṣù (~25K–100K tokens). ⚠️ Àwọn ToS Kiro kọ lílo proxy/harness ẹni-kẹta.",
       "codex": "So OpenAI Codex pọ̀ pẹ̀lú ìṣàn OAuth tó wà tẹ́lẹ̀.",
       "qwen": "So Qwen Code pọ̀ pẹ̀lú ìṣàn OAuth tó wà tẹ́lẹ̀.",
-      "github-models": "Ṣẹ̀dá GitHub PAT kan pẹ̀lú àyè 'models: read' ní github.com/settings/tokens",
-      "apmix": "So Apmix pọ mọ API key kan láti apmix.ai/dashboard — ìfọwọ́sí kan, ọ̀pọ̀ àwọn módéèlù."
+      "github-models": "Ṣẹ̀dá GitHub PAT kan pẹ̀lú àyè 'models: read' ní github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} ń gba àwọn ID model abinibi-provider. Gbé wọlé láti /models tàbí fi àwọn ID àdáni kún un fún ìdarí ipa-ọ̀nà.",
     "bedrockModelsDescription": "Àwọn model Amazon Bedrock jẹ́ dídín mọ́ agbègbè AWS. Gbé wọlé láti /models tàbí fi àwọn ID model Bedrock tí a ti mú ṣiṣẹ́ ní agbègbè tí a yàn kún un.",

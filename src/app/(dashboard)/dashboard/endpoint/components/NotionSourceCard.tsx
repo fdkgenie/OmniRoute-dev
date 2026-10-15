@@ -14,6 +14,7 @@ export default function NotionSourceCard() {
 
   const translateOrFallback = (key: string, fallback: string) => {
     try {
+      if (typeof t.has === "function" && !t.has(key as never)) return fallback;
       const translated = t(key as never);
       if (!translated || translated === key || translated === `endpoint.${key}`) {
         return fallback;

@@ -4390,6 +4390,9 @@
     "obsidianPassword": "पासवर्ड",
     "obsidianTailscaleHint": "मोबाइलबाट जडान गर्दा localhost को सट्टा आफ्नो Tailscale IP प्रयोग गर्नुहोस्। दुवै उपकरण एउटै Tailscale नेटवर्कमा हुनुपर्छ।",
     "cloudSyncNotConfigured": "यस इन्स्ट्यान्समा क्लाउड समक्रमण कन्फिगर गरिएको छैन।",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "जडान गर्नुहोस्",
     "notionConnectFailed": "जडान गर्न असफल भयो",
     "notionConnected": "जडान भयो",
@@ -6470,6 +6473,7 @@
       "monsterapi": "monsterapi.ai मा API कुञ्जी प्राप्त गर्नुहोस्",
       "moonshot": "Kimi लाई API कुञ्जीसँग जडान गर्नुहोस्।",
       "morph": "निःशुल्क तह: 250K क्रेडिट/महिना, $0",
+      "apmix": "apmix.ai/dashboard बाट API किसहित Apmix जोड्नुहोस् — एउटा सदस्यता, धेरै मोडेलहरू।",
       "nanogpt": "NanoGPT लाई API कुञ्जीसँग जडान गर्नुहोस्।",
       "nebius": "API परीक्षणका लागि साइनअप गर्दा ~$1 परीक्षण क्रेडिट",
       "nlpcloud": "NLP Cloud ले OpenAI chat/completions को सट्टा स्वामित्वयुक्त च्याटबट API प्रयोग गर्छ। OmniRoute ले OpenAI सन्देशहरूलाई input/context/history मा अनुकूलित गर्छ र समर्थित च्याटबट मोडेलहरूको स्थानीय क्याटलग उपलब्ध गराउँछ।",
@@ -6566,8 +6570,7 @@
       "kiro": "निःशुल्क तह: 50 क्रेडिट/महिना (~25K–100K टोकन)। ⚠️ Kiro ToS ले तेस्रो-पक्ष प्रोक्सी/हार्नेसको प्रयोग निषेध गर्छ।",
       "codex": "विद्यमान OAuth प्रवाहमार्फत OpenAI Codex जडान गर्नुहोस्।",
       "qwen": "विद्यमान OAuth प्रवाहमार्फत Qwen Code जडान गर्नुहोस्।",
-      "github-models": "github.com/settings/tokens मा 'models: read' स्कोपसहित GitHub PAT सिर्जना गर्नुहोस्",
-      "apmix": "apmix.ai/dashboard बाट API किसहित Apmix जोड्नुहोस् — एउटा सदस्यता, धेरै मोडेलहरू।"
+      "github-models": "github.com/settings/tokens मा 'models: read' स्कोपसहित GitHub PAT सिर्जना गर्नुहोस्"
     },
     "passthroughModelsDescription": "{provider} ले प्रदायक-मूल मोडेल ID हरू स्वीकार गर्छ। /models बाट आयात गर्नुहोस् वा राउटिङका लागि अनुकूलन ID हरू थप्नुहोस्।",
     "bedrockModelsDescription": "Amazon Bedrock मोडेलहरू AWS क्षेत्रअनुसार सीमित हुन्छन्। /models बाट आयात गर्नुहोस् वा चयन गरिएको क्षेत्रमा सक्षम गरिएका Bedrock मोडेल ID हरू थप्नुहोस्।",

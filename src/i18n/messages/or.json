@@ -4390,6 +4390,9 @@
     "obsidianPassword": "ପାସୱାର୍ଡ",
     "obsidianTailscaleHint": "ମୋବାଇଲ୍ରୁ ସଂଯୋଗ କରୁଥିଲେ localhost ପରିବର୍ତ୍ତେ ଆପଣଙ୍କ Tailscale IP ବ୍ୟବହାର କରନ୍ତୁ। ଉଭୟ ଡିଭାଇସ୍ ସମାନ Tailscale ନେଟୱର୍କରେ ରହିବା ଆବଶ୍ୟକ।",
     "cloudSyncNotConfigured": "ଏହି ଇନ୍ଷ୍ଟାନ୍ସରେ କ୍ଲାଉଡ୍ ସିଙ୍କ୍ ବିନ୍ୟାସିତ ହୋଇନାହିଁ।",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "ସଂଯୋଗ କରନ୍ତୁ",
     "notionConnectFailed": "ସଂଯୋଗ କରିବାରେ ବିଫଳ",
     "notionConnected": "ସଂଯୁକ୍ତ",
@@ -6470,6 +6473,7 @@
       "monsterapi": "monsterapi.aiରୁ API କୀ ପାଆନ୍ତୁ",
       "moonshot": "ଏକ API କୀ ସହିତ Kimiକୁ ସଂଯୋଗ କରନ୍ତୁ।",
       "morph": "ମାଗଣା ସ୍ତର: ମାସକୁ 250K କ୍ରେଡିଟ୍, $0",
+      "apmix": "apmix.ai/dashboard ରୁ API କି ସହ Apmix ସଂଯୋଗ କରନ୍ତୁ — ଗୋଟିଏ ସଦସ୍ୟତା, ଅନେକ ମଡେଲ।",
       "nanogpt": "ଏକ API କୀ ସହିତ NanoGPTକୁ ସଂଯୋଗ କରନ୍ତୁ।",
       "nebius": "API ପରୀକ୍ଷଣ ପାଇଁ ସାଇନ୍ଅପ୍ କଲେ ~$1 ପରୀକ୍ଷାମୂଳକ କ୍ରେଡିଟ୍",
       "nlpcloud": "NLP Cloud OpenAI chat/completions ପରିବର୍ତ୍ତେ ଏକ ମାଲିକାନା chatbot API ବ୍ୟବହାର କରେ। OmniRoute OpenAI ମେସେଜ୍ଗୁଡ଼ିକୁ input/context/history ରେ ଖାପ ଖୁଆଏ ଏବଂ ସମର୍ଥିତ chatbot ମଡେଲ୍ଗୁଡ଼ିକର ଏକ ସ୍ଥାନୀୟ କ୍ୟାଟାଲଗ୍ ଉପଲବ୍ଧ କରାଏ।",
@@ -6566,8 +6570,7 @@
       "kiro": "ମାଗଣା ସ୍ତର: 50 କ୍ରେଡିଟ୍/ମାସ (~25K–100K ଟୋକନ୍)। ⚠️ Kiro ToS ତୃତୀୟ-ପକ୍ଷ proxy/harness ବ୍ୟବହାରକୁ ନିଷେଧ କରେ।",
       "codex": "ବର୍ତ୍ତମାନର OAuth ପ୍ରବାହ ସହିତ OpenAI Codexକୁ ସଂଯୋଗ କରନ୍ତୁ।",
       "qwen": "ବର୍ତ୍ତମାନର OAuth ପ୍ରବାହ ସହିତ Qwen Codeକୁ ସଂଯୋଗ କରନ୍ତୁ।",
-      "github-models": "github.com/settings/tokensରେ 'models: read' ସ୍କୋପ୍ ସହିତ ଏକ GitHub PAT ସୃଷ୍ଟି କରନ୍ତୁ",
-      "apmix": "apmix.ai/dashboard ରୁ API କି ସହ Apmix ସଂଯୋଗ କରନ୍ତୁ — ଗୋଟିଏ ସଦସ୍ୟତା, ଅନେକ ମଡେଲ।"
+      "github-models": "github.com/settings/tokensରେ 'models: read' ସ୍କୋପ୍ ସହିତ ଏକ GitHub PAT ସୃଷ୍ଟି କରନ୍ତୁ"
     },
     "passthroughModelsDescription": "{provider} ପ୍ରଦାନକାରୀ-ନେଟିଭ୍ ମଡେଲ୍ IDଗୁଡ଼ିକ ଗ୍ରହଣ କରେ। /modelsରୁ ଆମଦାନି କରନ୍ତୁ କିମ୍ବା ରାଉଟିଂ ପାଇଁ କଷ୍ଟମ୍ ID ଯୋଡ଼ନ୍ତୁ।",
     "bedrockModelsDescription": "Amazon Bedrock ମଡେଲ୍ଗୁଡ଼ିକ AWS ଅଞ୍ଚଳ ଅନୁସାରେ ସୀମିତ। /modelsରୁ ଆମଦାନି କରନ୍ତୁ କିମ୍ବା ଚୟନିତ ଅଞ୍ଚଳରେ ସକ୍ଷମ ଥିବା Bedrock ମଡେଲ୍ IDଗୁଡ଼ିକ ଯୋଡ଼ନ୍ତୁ।",

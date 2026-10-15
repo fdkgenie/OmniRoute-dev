@@ -4390,6 +4390,9 @@
     "obsidianPassword": "ਪਾਸਵਰਡ",
     "obsidianTailscaleHint": "ਜੇ ਮੋਬਾਈਲ ਤੋਂ ਕਨੈਕਟ ਕਰ ਰਹੇ ਹੋ, ਤਾਂ localhost ਦੀ ਬਜਾਏ ਆਪਣਾ Tailscale IP ਵਰਤੋ। ਦੋਵੇਂ ਡਿਵਾਈਸਾਂ ਇੱਕੋ Tailscale ਨੈੱਟਵਰਕ 'ਤੇ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ।",
     "cloudSyncNotConfigured": "ਇਸ ਇੰਸਟੈਂਸ 'ਤੇ ਕਲਾਉਡ ਸਿੰਕ ਕੌਂਫਿਗਰ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ।",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "ਕਨੈਕਟ ਕਰੋ",
     "notionConnectFailed": "ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
     "notionConnected": "ਕਨੈਕਟ ਹੋ ਗਿਆ",
@@ -6470,6 +6473,7 @@
       "monsterapi": "API ਕੁੰਜੀ monsterapi.ai ਤੋਂ ਪ੍ਰਾਪਤ ਕਰੋ",
       "moonshot": "Kimi ਨੂੰ API ਕੁੰਜੀ ਨਾਲ ਕਨੈਕਟ ਕਰੋ।",
       "morph": "ਮੁਫ਼ਤ ਟੀਅਰ: 250K ਕ੍ਰੈਡਿਟ/ਮਹੀਨਾ, $0",
+      "apmix": "apmix.ai/dashboard ਤੋਂ API ਕੁੰਜੀ ਨਾਲ Apmix ਕਨੈਕਟ ਕਰੋ — ਇੱਕ ਮੈਂਬਰਸ਼ਿਪ, ਕਈ ਮਾਡਲ।",
       "nanogpt": "NanoGPT ਨੂੰ API ਕੁੰਜੀ ਨਾਲ ਕਨੈਕਟ ਕਰੋ।",
       "nebius": "API ਟੈਸਟਿੰਗ ਲਈ ਸਾਈਨ ਅੱਪ ਕਰਨ 'ਤੇ ~$1 ਦੇ ਟ੍ਰਾਇਲ ਕ੍ਰੈਡਿਟ",
       "nlpcloud": "NLP Cloud OpenAI chat/completions ਦੀ ਬਜਾਏ ਇੱਕ ਮਲਕੀਅਤ ਵਾਲਾ ਚੈਟਬੋਟ API ਵਰਤਦਾ ਹੈ। OmniRoute OpenAI ਸੁਨੇਹਿਆਂ ਨੂੰ ਇਨਪੁੱਟ/ਸੰਦਰਭ/ਇਤਿਹਾਸ ਅਨੁਸਾਰ ਢਾਲਦਾ ਹੈ ਅਤੇ ਸਮਰਥਿਤ ਚੈਟਬੋਟ ਮਾਡਲਾਂ ਦਾ ਇੱਕ ਸਥਾਨਕ ਕੈਟਾਲਾਗ ਉਪਲਬਧ ਕਰਾਉਂਦਾ ਹੈ।",
@@ -6566,8 +6570,7 @@
       "kiro": "ਮੁਫ਼ਤ ਟੀਅਰ: 50 ਕ੍ਰੈਡਿਟ/ਮਹੀਨਾ (~25K–100K ਟੋਕਨ)। ⚠️ Kiro ToS ਵਿੱਚ ਤੀਜੀ-ਧਿਰ ਪ੍ਰਾਕਸੀ/ਹਾਰਨੈੱਸ ਦੀ ਵਰਤੋਂ ਦੀ ਮਨਾਹੀ ਹੈ।",
       "codex": "ਮੌਜੂਦਾ OAuth ਫ਼ਲੋ ਨਾਲ OpenAI Codex ਨੂੰ ਕਨੈਕਟ ਕਰੋ।",
       "qwen": "ਮੌਜੂਦਾ OAuth ਫ਼ਲੋ ਨਾਲ Qwen Code ਨੂੰ ਕਨੈਕਟ ਕਰੋ।",
-      "github-models": "github.com/settings/tokens ਉੱਤੇ 'models: read' ਸਕੋਪ ਵਾਲਾ GitHub PAT ਬਣਾਓ",
-      "apmix": "apmix.ai/dashboard ਤੋਂ API ਕੁੰਜੀ ਨਾਲ Apmix ਕਨੈਕਟ ਕਰੋ — ਇੱਕ ਮੈਂਬਰਸ਼ਿਪ, ਕਈ ਮਾਡਲ।"
+      "github-models": "github.com/settings/tokens ਉੱਤੇ 'models: read' ਸਕੋਪ ਵਾਲਾ GitHub PAT ਬਣਾਓ"
     },
     "passthroughModelsDescription": "{provider} ਪ੍ਰਦਾਤਾ-ਮੂਲ ਮਾਡਲ IDs ਸਵੀਕਾਰ ਕਰਦਾ ਹੈ। /models ਤੋਂ ਇੰਪੋਰਟ ਕਰੋ ਜਾਂ ਰੂਟਿੰਗ ਲਈ ਕਸਟਮ IDs ਸ਼ਾਮਲ ਕਰੋ।",
     "bedrockModelsDescription": "Amazon Bedrock ਮਾਡਲਾਂ ਦਾ ਦਾਇਰਾ AWS ਖੇਤਰ ਅਨੁਸਾਰ ਹੁੰਦਾ ਹੈ। /models ਤੋਂ ਇੰਪੋਰਟ ਕਰੋ ਜਾਂ ਚੁਣੇ ਹੋਏ ਖੇਤਰ ਵਿੱਚ ਸਮਰੱਥ ਕੀਤੀਆਂ Bedrock ਮਾਡਲ IDs ਸ਼ਾਮਲ ਕਰੋ।",

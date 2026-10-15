@@ -4390,6 +4390,9 @@
     "obsidianPassword": "密码",
     "obsidianTailscaleHint": "如果从移动设备连接，请使用 Tailscale IP 而非 localhost。两台设备必须在同一 Tailscale 网络中。",
     "cloudSyncNotConfigured": "此实例未配置云同步。",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "连接",
     "notionConnectFailed": "连接失败",
     "notionConnected": "已连接",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "当此账户达到 5 小时使用限额且 Anthropic 提供较低优先级通道时，OmniRoute 会接受该通道，并继续发送带有 anthropic-usage-limit: slow 的请求，直到时间窗口重置，而不是让连接进入冷却状态。每周限额仍然适用，响应可能需要等待空闲容量。",
     "claudeAutoLimitResetLabel": "自动重置会话限额（每周一次）",
     "claudeAutoLimitResetDescription": "当此账户达到 5 小时使用限额且有可用的会话限额重置机会时，OmniRoute 会自动使用该机会，并以全速重试。这会使用账户每周一次的重置机会，且仍会计入每周限额。",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "跳过瞬态冷却，以便此连接在发生可恢复错误后仍符合条件（被禁/过期等终态仍适用）。",
     "disableCoolingLabel": "禁用此连接的冷却",
     "bulkPasteAdded": "{count, plural, one {已添加 1 个 key} other {已添加 # 个 key}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "在 monsterapi.ai 获取 API 密钥",
       "moonshot": "使用 API 密钥连接 Moonshot AI。",
       "morph": "免费层级：每月 250K 额度，$0",
+      "apmix": "使用来自 apmix.ai/dashboard 的 API 密钥连接 Apmix — 一份订阅，多个模型。",
       "nanogpt": "使用 API 密钥连接 NanoGPT。",
       "nebius": "注册即送约 $1 试用额度用于 API 测试",
       "nlpcloud": "NLP Cloud 使用专有的聊天机器人 API，而非 OpenAI chat/completions。OmniRoute 将 OpenAI 消息适配为 input/context/history，并公开受支持聊天机器人模型的本地目录。",
@@ -6559,8 +6570,7 @@
       "kiro": "免费层：50 积分/月（约 25K–100K 令牌）。⚠️ Kiro 服务条款禁止使用第三方代理/测试框架。",
       "codex": "使用现有的 OAuth 流程连接 OpenAI Codex。",
       "qwen": "使用现有的 OAuth 流程连接 Qwen Code。",
-      "github-models": "在 github.com/settings/tokens 创建具有 'models: read' 作用域的 GitHub PAT",
-      "apmix": "使用来自 apmix.ai/dashboard 的 API 密钥连接 Apmix — 一份订阅，多个模型。"
+      "github-models": "在 github.com/settings/tokens 创建具有 'models: read' 作用域的 GitHub PAT"
     },
     "passthroughModelsDescription": "{provider} 接受供应商本机模型 ID。从 /models 导入或添加用于路由的自定义 ID。",
     "bedrockModelsDescription": "Amazon Bedrock 模型的范围按 AWS 区域划分。从 /models 导入或添加在所选区域中启用的基岩模型 ID。",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "设置",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "转换流失败"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "用量",
     "grokExtraUsageCredits": "额外使用积分",
     "grokAutoTopUp": "自动充值",
@@ -10122,11 +10129,7 @@
     "updatedShort": "更新于",
     "lastRefreshed": "上次刷新",
     "providerQuota": "提供者配额",
-    "providerQuotaHomeHint": "已连接账户的实时状态",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "已连接账户的实时状态"
   },
   "modals": {
     "waitingAuth": "等待授权",

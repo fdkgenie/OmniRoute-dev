@@ -4390,6 +4390,9 @@
     "obsidianPassword": "ಪಾಸ್ವರ್ಡ್",
     "obsidianTailscaleHint": "ಮೊಬೈಲ್ನಿಂದ ಸಂಪರ್ಕಿಸುತ್ತಿದ್ದರೆ localhost ಬದಲಿಗೆ ನಿಮ್ಮ Tailscale IP ಬಳಸಿ. ಎರಡೂ ಸಾಧನಗಳು ಒಂದೇ Tailscale ನೆಟ್ವರ್ಕ್ನಲ್ಲಿರಬೇಕು.",
     "cloudSyncNotConfigured": "ಈ ಇನ್ಸ್ಟನ್ಸ್ನಲ್ಲಿ ಕ್ಲೌಡ್ ಸಿಂಕ್ ಕಾನ್ಫಿಗರ್ ಮಾಡಲಾಗಿಲ್ಲ.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "ಸಂಪರ್ಕಿಸಿ",
     "notionConnectFailed": "ಸಂಪರ್ಕಿಸಲು ವಿಫಲವಾಗಿದೆ",
     "notionConnected": "ಸಂಪರ್ಕಗೊಂಡಿದೆ",
@@ -6470,6 +6473,7 @@
       "monsterapi": "monsterapi.ai ನಲ್ಲಿ API ಕೀ ಪಡೆಯಿರಿ.",
       "moonshot": "API ಕೀ ಬಳಸಿ Kimi ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.",
       "morph": "ಉಚಿತ ಹಂತ: ತಿಂಗಳಿಗೆ 250K ಕ್ರೆಡಿಟ್ಗಳು, $0",
+      "apmix": "apmix.ai/dashboard ನಿಂದ API ಕೀ ಮೂಲಕ Apmix ಅನ್ನು ಸಂಪರ್ಕಿಸಿ — ಒಂದು ಚಂದಾದಾರಿಕೆ, ಹಲವು ಮಾದರಿಗಳು.",
       "nanogpt": "API ಕೀ ಬಳಸಿ NanoGPT ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.",
       "nebius": "API ಪರೀಕ್ಷೆಗಾಗಿ ಸೈನ್ ಅಪ್ ಮಾಡಿದಾಗ ಸುಮಾರು $1 ಮೌಲ್ಯದ ಪ್ರಾಯೋಗಿಕ ಕ್ರೆಡಿಟ್ಗಳು",
       "nlpcloud": "NLP Cloud, OpenAI chat/completions ಬದಲಿಗೆ ಸ್ವಾಮ್ಯದ ಚಾಟ್ಬಾಟ್ API ಅನ್ನು ಬಳಸುತ್ತದೆ. OmniRoute, OpenAI ಸಂದೇಶಗಳನ್ನು ಇನ್ಪುಟ್/ಸಂದರ್ಭ/ಇತಿಹಾಸಕ್ಕೆ ಹೊಂದಿಸುತ್ತದೆ ಮತ್ತು ಬೆಂಬಲಿತ ಚಾಟ್ಬಾಟ್ ಮಾದರಿಗಳ ಸ್ಥಳೀಯ ಕ್ಯಾಟಲಾಗ್ ಅನ್ನು ಒದಗಿಸುತ್ತದೆ.",
@@ -6566,8 +6570,7 @@
       "kiro": "ಉಚಿತ ಹಂತ: ತಿಂಗಳಿಗೆ 50 ಕ್ರೆಡಿಟ್ಗಳು (~25K–100K ಟೋಕನ್ಗಳು). ⚠️ Kiro ToS ಮೂರನೇ-ಪಕ್ಷದ proxy/harness ಬಳಕೆಯನ್ನು ನಿಷೇಧಿಸುತ್ತದೆ.",
       "codex": "ಈಗಿರುವ OAuth ಹರಿವಿನ ಮೂಲಕ OpenAI Codex ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.",
       "qwen": "ಈಗಿರುವ OAuth ಹರಿವಿನ ಮೂಲಕ Qwen Code ಅನ್ನು ಸಂಪರ್ಕಿಸಿ.",
-      "github-models": "github.com/settings/tokens ನಲ್ಲಿ 'models: read' ಸ್ಕೋಪ್ನೊಂದಿಗೆ GitHub PAT ರಚಿಸಿ",
-      "apmix": "apmix.ai/dashboard ನಿಂದ API ಕೀ ಮೂಲಕ Apmix ಅನ್ನು ಸಂಪರ್ಕಿಸಿ — ಒಂದು ಚಂದಾದಾರಿಕೆ, ಹಲವು ಮಾದರಿಗಳು."
+      "github-models": "github.com/settings/tokens ನಲ್ಲಿ 'models: read' ಸ್ಕೋಪ್ನೊಂದಿಗೆ GitHub PAT ರಚಿಸಿ"
     },
     "passthroughModelsDescription": "{provider} ಪೂರೈಕೆದಾರ-ಸ್ಥಳೀಯ ಮಾಡೆಲ್ IDಗಳನ್ನು ಸ್ವೀಕರಿಸುತ್ತದೆ. /models ನಿಂದ ಆಮದು ಮಾಡಿ ಅಥವಾ ರೂಟಿಂಗ್ಗಾಗಿ ಕಸ್ಟಮ್ IDಗಳನ್ನು ಸೇರಿಸಿ.",
     "bedrockModelsDescription": "Amazon Bedrock ಮಾಡೆಲ್ಗಳು AWS ಪ್ರದೇಶದ ವ್ಯಾಪ್ತಿಗೆ ಒಳಪಟ್ಟಿರುತ್ತವೆ. /models ನಿಂದ ಆಮದು ಮಾಡಿ ಅಥವಾ ಆಯ್ಕೆಮಾಡಿದ ಪ್ರದೇಶದಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಲಾದ Bedrock ಮಾಡೆಲ್ IDಗಳನ್ನು ಸೇರಿಸಿ.",

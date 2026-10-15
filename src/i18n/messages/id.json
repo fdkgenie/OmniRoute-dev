@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Kata Sandi",
     "obsidianTailscaleHint": "Gunakan IP Tailscale Anda alih-alih localhost jika menghubungkan dari ponsel. Kedua perangkat harus berada di jaringan Tailscale yang sama.",
     "cloudSyncNotConfigured": "Sinkronisasi cloud belum dikonfigurasi pada instance ini.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Sambungkan",
     "notionConnectFailed": "Gagal terhubung",
     "notionConnected": "Terhubung",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "Saat akun ini mencapai batas penggunaan 5 jam dan Anthropic menawarkan jalur berprioritas lebih rendah, OmniRoute menerimanya dan terus mengirim permintaan dengan anthropic-usage-limit: slow hingga jendela diatur ulang, alih-alih mendinginkan koneksi. Batas mingguan tetap berlaku dan respons mungkin menunggu kapasitas yang tersedia.",
     "claudeAutoLimitResetLabel": "Atur ulang batas sesi secara otomatis (seminggu sekali)",
     "claudeAutoLimitResetDescription": "Saat akun ini mencapai batas penggunaan 5 jam dan pengaturan ulang batas sesi tersedia, OmniRoute mengklaimnya secara otomatis dan mencoba kembali dengan kecepatan penuh. Tindakan ini menggunakan pengaturan ulang akun yang tersedia seminggu sekali dan tetap dihitung terhadap batas mingguan.",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "Lewati cooldown transien agar koneksi ini tetap memenuhi syarat bahkan setelah kesalahan yang dapat dipulihkan (status terminal seperti diblokir/kedaluwarsa tetap berlaku).",
     "disableCoolingLabel": "Nonaktifkan cooldown untuk koneksi ini",
     "bulkPasteAdded": "{count, plural, one {1 kunci ditambahkan} other {# kunci ditambahkan}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "Dapatkan kunci API di monsterapi.ai",
       "moonshot": "Hubungkan Moonshot AI dengan kunci API.",
       "morph": "Tingkat gratis: 250 ribu kredit/bulan, $0",
+      "apmix": "Hubungkan Apmix dengan kunci API dari apmix.ai/dashboard — satu langganan, banyak model.",
       "nanogpt": "Hubungkan NanoGPT dengan kunci API.",
       "nebius": "Kredit uji coba ~$1 saat pendaftaran untuk pengujian API",
       "nlpcloud": "NLP Cloud menggunakan API chatbot berpemilik alih-alih chat/completions OpenAI. OmniRoute menyesuaikan pesan OpenAI ke input/konteks/riwayat dan mengekspos katalog lokal model chatbot yang didukung.",
@@ -6559,8 +6570,7 @@
       "kiro": "Tingkat gratis: 50 kredit/bulan (~25K–100K token). ⚠️ ToS Kiro melarang penggunaan proksi/harness pihak ketiga.",
       "codex": "Hubungkan OpenAI Codex dengan alur OAuth yang ada.",
       "qwen": "Hubungkan Qwen Code dengan alur OAuth yang ada.",
-      "github-models": "Buat GitHub PAT dengan cakupan 'models: read' di github.com/settings/tokens",
-      "apmix": "Hubungkan Apmix dengan kunci API dari apmix.ai/dashboard — satu langganan, banyak model."
+      "github-models": "Buat GitHub PAT dengan cakupan 'models: read' di github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} menerima ID model asli penyedia. Impor dari /models atau tambahkan ID khusus untuk perutean.",
     "bedrockModelsDescription": "Model Amazon Bedrock dicakup berdasarkan wilayah AWS. Impor dari /models atau tambahkan ID model Batuan Dasar yang diaktifkan di wilayah yang dipilih.",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "Pengaturan",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "Gagal mentransformasi stream"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "Penggunaan",
     "grokExtraUsageCredits": "Kredit Penggunaan Ekstra",
     "grokAutoTopUp": "Isi Ulang Otomatis",
@@ -10122,11 +10129,7 @@
     "updatedShort": "Diperbarui",
     "lastRefreshed": "Terakhir disegarkan",
     "providerQuota": "Kuota Penyedia",
-    "providerQuotaHomeHint": "Status langsung di seluruh akun yang terhubung",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "Status langsung di seluruh akun yang terhubung"
   },
   "modals": {
     "waitingAuth": "Menunggu Otorisasi",

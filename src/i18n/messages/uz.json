@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Parol",
     "obsidianTailscaleHint": "Mobil qurilmadan ulanayotgan bo‘lsangiz, localhost o‘rniga Tailscale IP manzilingizdan foydalaning. Ikkala qurilma ham bir xil Tailscale tarmog‘ida bo‘lishi kerak.",
     "cloudSyncNotConfigured": "Bu nusxada bulutli sinxronizatsiya sozlanmagan.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Ulanish",
     "notionConnectFailed": "Ulanib bo‘lmadi",
     "notionConnected": "Ulangan",
@@ -6470,6 +6473,7 @@
       "monsterapi": "API kalitini monsterapi.ai manzilidan oling",
       "moonshot": "Kimi’ni API kaliti bilan ulang.",
       "morph": "Bepul tarif: oyiga 250K kredit, $0",
+      "apmix": "Apmix'ni apmix.ai/dashboard dagi API kaliti bilan ulang — bitta obuna, ko'plab modellar.",
       "nanogpt": "NanoGPT’ni API kaliti bilan ulang.",
       "nebius": "Roʻyxatdan oʻtganda API sinovi uchun ~$1 sinov krediti",
       "nlpcloud": "NLP Cloud OpenAI chat/completions oʻrniga xususiy chatbot API’sidan foydalanadi. OmniRoute OpenAI xabarlarini input/context/history formatiga moslashtiradi va qoʻllab-quvvatlanadigan chatbot modellarining mahalliy katalogini taqdim etadi.",
@@ -6566,8 +6570,7 @@
       "kiro": "Bepul tarif: oyiga 50 kredit (~25K–100K token). ⚠️ Kiro ToS uchinchi tomon proksi yoki harness vositalaridan foydalanishni taqiqlaydi.",
       "codex": "OpenAI Codexʼni mavjud OAuth jarayoni orqali ulang.",
       "qwen": "Qwen Codeʼni mavjud OAuth jarayoni orqali ulang.",
-      "github-models": "github.com/settings/tokens manzilida 'models: read' vakolat doirasiga ega GitHub PAT yarating",
-      "apmix": "Apmix'ni apmix.ai/dashboard dagi API kaliti bilan ulang — bitta obuna, ko'plab modellar."
+      "github-models": "github.com/settings/tokens manzilida 'models: read' vakolat doirasiga ega GitHub PAT yarating"
     },
     "passthroughModelsDescription": "{provider} provayderga xos model IDʼlarini qabul qiladi. /models orqali import qiling yoki marshrutlash uchun maxsus IDʼlarni qoʻshing.",
     "bedrockModelsDescription": "Amazon Bedrock modellari AWS mintaqasi boʻyicha cheklangan. /models orqali import qiling yoki tanlangan mintaqada yoqilgan Bedrock model IDʼlarini qoʻshing.",

@@ -4390,6 +4390,9 @@
     "obsidianPassword": "የይለፍ ቃል",
     "obsidianTailscaleHint": "ከሞባይል የሚገናኙ ከሆነ በlocalhost ምትክ የTailscale IPዎን ይጠቀሙ። ሁለቱም መሣሪያዎች በተመሳሳይ Tailscale አውታረ መረብ ላይ መሆን አለባቸው።",
     "cloudSyncNotConfigured": "የደመና ማመሳሰል በዚህ ኢንስታንስ ላይ አልተዋቀረም።",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "ያገናኙ",
     "notionConnectFailed": "መገናኘት አልተሳካም",
     "notionConnected": "ተገናኝቷል",
@@ -6470,6 +6473,7 @@
       "monsterapi": "የAPI ቁልፍን ከmonsterapi.ai ያግኙ",
       "moonshot": "Kimiን በAPI ቁልፍ ያገናኙ።",
       "morph": "ነፃ ደረጃ፦ በወር 250K ክሬዲቶች፣ $0",
+      "apmix": "Apmixን በapmix.ai/dashboard የሚገኝ የAPI ቁልፍ ያገናኙ — አንድ ደረሳ ብዙ ሞዴሎች።",
       "nanogpt": "NanoGPTን በAPI ቁልፍ ያገናኙ።",
       "nebius": "ለAPI ሙከራ ሲመዘገቡ ~$1 የሙከራ ክሬዲት",
       "nlpcloud": "NLP Cloud ከOpenAI chat/completions ይልቅ የራሱን የቻትቦት API ይጠቀማል። OmniRoute የOpenAI መልዕክቶችን ወደ input/context/history ያስማማል፣ እንዲሁም የሚደገፉ የቻትቦት ሞዴሎችን አካባቢያዊ ካታሎግ ያቀርባል።",
@@ -6566,8 +6570,7 @@
       "kiro": "ነፃ ደረጃ፦ በወር 50 ክሬዲቶች (~25K–100K ቶከኖች)። ⚠️ የKiro ToS በሦስተኛ ወገን ፕሮክሲ/ሃርነስ መጠቀምን ይከለክላል።",
       "codex": "OpenAI Codexን በነባሩ OAuth ፍሰት ያገናኙ።",
       "qwen": "Qwen Codeን በነባሩ OAuth ፍሰት ያገናኙ።",
-      "github-models": "በgithub.com/settings/tokens ላይ 'models: read' ወሰን ያለው GitHub PAT ይፍጠሩ",
-      "apmix": "Apmixን በapmix.ai/dashboard የሚገኝ የAPI ቁልፍ ያገናኙ — አንድ ደረሳ ብዙ ሞዴሎች።"
+      "github-models": "በgithub.com/settings/tokens ላይ 'models: read' ወሰን ያለው GitHub PAT ይፍጠሩ"
     },
     "passthroughModelsDescription": "{provider} የአቅራቢውን ቤተኛ የሞዴል መለያዎች ይቀበላል። ከ/models ያስመጡ ወይም ለማስተላለፍ ብጁ መለያዎችን ያክሉ።",
     "bedrockModelsDescription": "የAmazon Bedrock ሞዴሎች በAWS ክልል የተገደቡ ናቸው። ከ/models ያስመጡ ወይም በተመረጠው ክልል የነቁ የBedrock ሞዴል መለያዎችን ያክሉ።",

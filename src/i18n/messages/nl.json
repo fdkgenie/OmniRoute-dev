@@ -4390,6 +4390,9 @@
     "obsidianPassword": "Wachtwoord",
     "obsidianTailscaleHint": "Gebruik je Tailscale-IP in plaats van localhost als je verbinding maakt vanaf een mobiel apparaat. Beide apparaten moeten zich op hetzelfde Tailscale-netwerk bevinden.",
     "cloudSyncNotConfigured": "Cloud-synchronisatie is niet geconfigureerd op deze instantie.",
+    "cloudUploadDestination": "__MISSING__:Cloud sync destination (not local backups):",
+    "cloudUploadWarning": "__MISSING__:Cloud sync is disabled by default on new installations. Enabling it uploads provider API keys, OAuth access/refresh tokens, OmniRoute API keys, and configuration to the destination above, now and during future syncs. This is separate from local Storage backups. Only enable it if you trust that server.",
+    "cloudUploadConsent": "__MISSING__:I understand and authorize uploading my credentials to this destination.",
     "notionConnect": "Verbinden",
     "notionConnectFailed": "Verbinden mislukt",
     "notionConnected": "Verbonden",
@@ -6020,6 +6023,13 @@
     "claudeLowPriorityModeDescription": "Wanneer dit account de gebruikslimiet van 5 uur bereikt en Anthropic verwerking met lagere prioriteit aanbiedt, accepteert OmniRoute deze en blijft het verzoeken verzenden met anthropic-usage-limit: slow totdat het tijdvenster wordt gereset, in plaats van de verbinding tijdelijk te vertragen. De wekelijkse limiet blijft van toepassing en reacties moeten mogelijk wachten op beschikbare capaciteit.",
     "claudeAutoLimitResetLabel": "De sessielimiet automatisch resetten (eenmaal per week)",
     "claudeAutoLimitResetDescription": "Wanneer dit account de gebruikslimiet van 5 uur bereikt en er een reset van de sessielimiet beschikbaar is, past OmniRoute deze automatisch toe en probeert het opnieuw op volle snelheid. Dit gebruikt de wekelijkse reset van het account en telt nog steeds mee voor de wekelijkse limiet.",
+    "codexPaidCreditsShort": "Extra credits",
+    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
+    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
+    "codexPaidCreditsDisabled": "Codex paid credits disabled",
+    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
+    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
+    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled.",
     "disableCoolingDescription": "Sla de tijdelijke afkoelperiode over, zodat deze verbinding in aanmerking blijft komen, zelfs na herstelbare fouten (definitieve statussen zoals verbannen/verlopen zijn nog steeds van toepassing).",
     "disableCoolingLabel": "Afkoelperiode uitschakelen voor deze verbinding",
     "bulkPasteAdded": "{count, plural, one {1 sleutel toegevoegd} other {# sleutels toegevoegd}}",
@@ -6463,6 +6473,7 @@
       "monsterapi": "Verkrijg een API-sleutel op monsterapi.ai",
       "moonshot": "Verbind Moonshot AI met een API-sleutel.",
       "morph": "Gratis niveau: 250K credits/maand, $0",
+      "apmix": "Verbind Apmix met een API-sleutel van apmix.ai/dashboard — één abonnement, veel modellen.",
       "nanogpt": "Verbind NanoGPT met een API-sleutel.",
       "nebius": "~$1 proeftegoed bij registratie voor API-testen",
       "nlpcloud": "NLP Cloud gebruikt een eigen chatbot-API in plaats van OpenAI chat/completions. OmniRoute past OpenAI-berichten aan naar invoer/context/geschiedenis en stelt een lokale catalogus van ondersteunde chatbotmodellen beschikbaar.",
@@ -6559,8 +6570,7 @@
       "kiro": "Gratis tier: 50 credits/maand (~25K–100K tokens). ⚠️ Kiro ToS verbiedt het gebruik van externe proxy/harness.",
       "codex": "Verbind OpenAI Codex met de bestaande OAuth-flow.",
       "qwen": "Verbind Qwen Code met de bestaande OAuth-flow.",
-      "github-models": "Maak een GitHub PAT aan met de scope 'models: read' op github.com/settings/tokens",
-      "apmix": "Verbind Apmix met een API-sleutel van apmix.ai/dashboard — één abonnement, veel modellen."
+      "github-models": "Maak een GitHub PAT aan met de scope 'models: read' op github.com/settings/tokens"
     },
     "passthroughModelsDescription": "{provider} accepteert provider-native model-ID's. Importeer uit /models of voeg aangepaste ID's toe voor routering.",
     "bedrockModelsDescription": "Amazon Bedrock-modellen zijn afgestemd op de AWS-regio. Importeer uit /models of voeg Bedrock-model-ID's toe die zijn ingeschakeld in de geselecteerde regio.",
@@ -6732,14 +6742,7 @@
     "rateLimitOverridesModelConcurrencyLabel": "Per-model concurrency caps",
     "rateLimitOverridesModelConcurrencyPlaceholder": "glm-5=1\nglm-4.7=3",
     "rateLimitOverridesModelConcurrencyHint": "Optional: one model=cap per line, matched against the exact upstream model id. Queues excess requests locally; blank means no per-model cap.",
-    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}.",
-    "codexPaidCreditsShort": "Extra credits",
-    "codexPaidCreditsToggleTitle": "Allow paid Codex credits after subscription quota runs out (additional charges may apply)",
-    "codexPaidCreditsEnabled": "Codex paid credits enabled (additional charges may apply)",
-    "codexPaidCreditsDisabled": "Codex paid credits disabled",
-    "failedUpdateCodexPaidCredits": "Failed to update Codex paid-credit policy",
-    "allowCodexPaidCreditsLabel": "Allow paid Codex credits",
-    "allowCodexPaidCreditsDescription": "Allow this account to use paid credits after its subscription quota reaches the cutoff. Requires available credits reported by OpenAI; may incur charges. Spark limits and upstream cooldowns still apply. Credit availability is checked even if quota preflight is disabled."
+    "rateLimitOverridesModelConcurrencyInvalid": "Invalid per-model concurrency entry \"{entry}\" — use model=cap with a whole number from 1 to {max}."
   },
   "settings": {
     "title": "Instellingen",
@@ -9673,6 +9676,10 @@
     "streamTransformFailed": "Transformeren van stream mislukt"
   },
   "usage": {
+    "codexPaidCreditsLabel": "Paid Codex credits",
+    "codexPaidCreditsAvailable": "Available (balance not reported)",
+    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
+    "codexPaidCreditsUnlimited": "Unlimited",
     "title": "Gebruik",
     "grokExtraUsageCredits": "Extra Gebruikskredieten",
     "grokAutoTopUp": "Automatische Opwaardering",
@@ -10122,11 +10129,7 @@
     "updatedShort": "Bijgewerkt",
     "lastRefreshed": "Laatst vernieuwd",
     "providerQuota": "Providerquota",
-    "providerQuotaHomeHint": "Live status over verbonden accounts",
-    "codexPaidCreditsLabel": "Paid Codex credits",
-    "codexPaidCreditsAvailable": "Available (balance not reported)",
-    "codexPaidCreditsUnavailable": "Unavailable or spending limit reached",
-    "codexPaidCreditsUnlimited": "Unlimited"
+    "providerQuotaHomeHint": "Live status over verbonden accounts"
   },
   "modals": {
     "waitingAuth": "Wachten op toestemming",
