@@ -55,7 +55,7 @@ if (dev) {
 }
 
 const bootstrappedEnv = bootstrapEnv();
-// `next dev --port N` parity: CLI port overrides PORT/DASHBOARD_PORT from .env.
+// Next CLI `--port N` parity (dev + start): CLI port overrides PORT/DASHBOARD_PORT from .env.
 const cliPort = parseCliPort(process.argv);
 if (cliPort) {
   bootstrappedEnv.PORT = cliPort;

@@ -117,4 +117,11 @@ describe("parseCliPort", () => {
   it("returns undefined without a port flag", () => {
     assert.equal(parseCliPort(["node", "run-next.mjs", "dev"]), undefined);
   });
+
+  it("ignores missing or invalid values so .env PORT still applies", () => {
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "--port"]), undefined);
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "--port", "--turbo"]), undefined);
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "--port=abc"]), undefined);
+    assert.equal(parseCliPort(["node", "run-next.mjs", "dev", "-p", "70000"]), undefined);
+  });
 });

@@ -166,14 +166,18 @@ export function resolveRuntimePorts(fromEnv = process.env) {
 }
 
 /**
- * `next dev --port N` / `-p N` / `--port=N` parity for scripts/dev/run-next.mjs.
- * Returns the raw port string, or undefined when no flag is present.
+ * Next CLI `--port N` / `-p N` / `--port=N` parity for scripts/dev/run-next.mjs.
+ * Returns the port as a string, or undefined when absent/invalid so .env PORT still applies.
  * @param {string[]} argv
  */
 export function parseCliPort(argv = process.argv) {
   const index = argv.findIndex((arg) => arg === "--port" || arg === "-p");
-  if (index > -1) return argv[index + 1];
-  return argv.find((arg) => arg.startsWith("--port="))?.slice("--port=".length);
+  const raw =
+    index > -1
+      ? argv[index + 1]
+      : argv.find((arg) => arg.startsWith("--port="))?.slice("--port=".length);
+  const port = parsePort(raw, null);
+  return port === null ? undefined : String(port);
 }
 
 export function withRuntimePortEnv(env, runtimePorts) {
